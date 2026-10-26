@@ -23,6 +23,7 @@
     .toc a:hover { background:#d3e8e8; }
     h2 { display:flex; align-items:center; gap:10px; margin:0 0 12px; font-size:17px; font-weight:700; scroll-margin-top:16px; }
     h2 .num { flex:none; width:26px; height:26px; border-radius:50%; background:var(--teal-light); color:var(--teal-dark); font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+    h3.sub { margin:16px 0 8px; font-size:14.5px; }
     p { margin:0 0 12px; font-size:14.5px; }
     ul, ol { margin:0; padding-left:20px; font-size:14.5px; }
     li { margin-bottom:8px; }
@@ -45,16 +46,19 @@
   <main>
     <section class="card">
       <div class="meta">
-        <span><strong>Effective date:</strong> October 2024</span>
-        <span><strong>App:</strong> KhaoJi</span>
+        <span><strong>Last updated:</strong> 26 October 2026</span>
+        <span><strong>App:</strong> KhaoJi (com.khaoji.app)</span>
       </div>
-      <p class="intro">Welcome to KhaoJi. We respect your privacy and are committed to protecting your personal data. This policy explains how we handle your data when you use our mobile application, and what rights you have.</p>
+      <p class="intro">Welcome to KhaoJi. We respect your privacy and are committed to protecting your personal data. This policy explains what data we collect when you use the KhaoJi mobile app, why we collect it, who we share it with, and what rights you have.</p>
       <nav class="toc">
         <a href="#collect">Data we collect</a>
         <a href="#use">How we use it</a>
+        <a href="#share">Who sees it</a>
         <a href="#third">Third-party services</a>
         <a href="#security">Security</a>
+        <a href="#retention">Retention</a>
         <a href="#deletion">Account deletion</a>
+        <a href="#children">Children</a>
         <a href="#terms">Terms</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -62,71 +66,107 @@
 
     <section class="card" id="collect">
       <h2><span class="num">1</span>Information we collect</h2>
-      <p>To provide food delivery, shop ordering and staff dispatch services, KhaoJi collects the following data:</p>
+      <p>To provide food delivery, shop ordering, dine-in and staff dispatch services, KhaoJi collects the following data:</p>
       <ul>
-        <li><strong>Personal identification:</strong> name, email address, phone number.</li>
-        <li><strong>Delivery information:</strong> delivery addresses and latitude/longitude coordinates.</li>
-        <li><strong>Location data (riders and customers):</strong> foreground and background location during active deliveries, for real-time tracking and geofencing verification.</li>
-        <li><strong>Device and technical data:</strong> unique device ID, IP address, app crash logs (Firebase Crashlytics) and analytics events.</li>
-        <li><strong>Push notification tokens:</strong> FCM tokens used to send live order status updates.</li>
+        <li><strong>Account details:</strong> name, email address, phone number and, if you add one, a profile photo.</li>
+        <li><strong>Delivery information:</strong> saved delivery addresses and the map pin (latitude/longitude) you choose.</li>
+        <li><strong>Location (customers and riders):</strong> precise location <strong>only while the app is open and in use</strong>. Customers use it to find nearby restaurants and set the delivery pin. Riders use it during an active delivery for live tracking and to confirm they are near the delivery address. KhaoJi does not collect location in the background.</li>
+        <li><strong>Orders:</strong> items, prices, order status, payment method (Cash on Delivery), ratings and reviews you write.</li>
+        <li><strong>Messages and photos:</strong> messages you send in KhaoJi support chat and in order chat with your rider, and any photos you choose to attach to a support chat.</li>
+        <li><strong>Restaurant owners and staff only:</strong> CNIC (national identity card) number and CNIC photos, collected by KhaoJi during partner or staff verification. Customers are never asked for a CNIC.</li>
+        <li><strong>Device and technical data:</strong> device identifiers, app version, crash logs (Firebase Crashlytics), app usage events (Firebase Analytics) and push notification tokens (Firebase Cloud Messaging).</li>
       </ul>
     </section>
 
     <section class="card" id="use">
       <h2><span class="num">2</span>How we use your data</h2>
       <ul>
-        <li>To process and deliver your food and grocery orders safely.</li>
-        <li>To verify rider presence near delivery locations (100 m geofence).</li>
-        <li>To prevent fraud, duplicate orders and promo code abuse.</li>
-        <li>To send real-time push notifications about order progress.</li>
+        <li>To create and secure your account and verify your phone number.</li>
+        <li>To process, prepare and deliver your orders.</li>
+        <li>To show live order progress and send order notifications.</li>
+        <li>To let our support team help you with an order, payment or account problem.</li>
+        <li>To verify restaurant partners and staff (CNIC verification).</li>
+        <li>To prevent fraud, fake orders, promo abuse and account misuse.</li>
+        <li>To find and fix app crashes and improve the app.</li>
+      </ul>
+      <p style="margin:12px 0 0">We do not sell your personal data and we do not use it for third-party advertising.</p>
+    </section>
+
+    <section class="card" id="share">
+      <h2><span class="num">3</span>Who can see your data</h2>
+      <ul>
+        <li><strong>The restaurant</strong> you order from sees your name, order items, delivery address and phone number so it can prepare and send your order.</li>
+        <li><strong>Your rider</strong> sees your name, delivery address, map pin and phone number for that delivery only.</li>
+        <li><strong>KhaoJi support agents</strong> see your support chat, and the order attached to a chat they are handling.</li>
+        <li><strong>KhaoJi administrators</strong> can access data when needed to run the service, resolve disputes and prevent fraud. CNIC data is visible only to authorised KhaoJi administrators.</li>
+        <li><strong>Legal requests:</strong> we may disclose data if required by Pakistani law or a valid legal order.</li>
       </ul>
     </section>
 
     <section class="card" id="third">
-      <h2><span class="num">3</span>Third-party services we use</h2>
-      <p>KhaoJi relies on trusted Google and Firebase infrastructure for authentication, database, analytics and maps:</p>
+      <h2><span class="num">4</span>Third-party services we use</h2>
+      <p>KhaoJi runs on Google and Firebase infrastructure. These providers process data on our behalf:</p>
       <ul>
-        <li><strong>Firebase Authentication and Firestore:</strong> account management and database.</li>
-        <li><strong>Google Maps SDK and Geocoding API:</strong> location display and address lookup.</li>
-        <li><strong>Firebase Crashlytics and Analytics:</strong> app stability monitoring and performance tracking.</li>
-        <li><strong>Firebase App Check (Play Integrity):</strong> fraud and bot prevention.</li>
+        <li><strong>Firebase Authentication, Cloud Firestore, Cloud Storage and Cloud Functions:</strong> accounts, database, photos and server logic.</li>
+        <li><strong>Firebase Cloud Messaging:</strong> push notifications.</li>
+        <li><strong>Google Maps SDK and Geocoding API:</strong> maps and address lookup.</li>
+        <li><strong>Firebase Crashlytics and Google Analytics for Firebase:</strong> crash reports and app usage statistics.</li>
+        <li><strong>Firebase App Check (Play Integrity):</strong> protection against fake apps and bots.</li>
       </ul>
+      <p style="margin:12px 0 0">See Google's privacy policy at <a href="https://policies.google.com/privacy" style="color:var(--teal-dark)">policies.google.com/privacy</a>.</p>
     </section>
 
     <section class="card" id="security">
-      <h2><span class="num">4</span>Data security</h2>
-      <p style="margin:0">We apply strict security measures to protect your data from unauthorized access, including role-based access control (RBAC), SSL/TLS encryption, data masking (for example, phone numbers shown as <code>0300*****67</code>) and code obfuscation.</p>
+      <h2><span class="num">5</span>Data security</h2>
+      <p style="margin:0">All data is encrypted in transit (HTTPS/TLS). Access is limited by role, so each person only sees what their job needs. Phone numbers are masked in many screens (for example <code>0300*****67</code>), support chat photos are private to you and the support team, and the app blocks screenshots on sensitive screens.</p>
+    </section>
+
+    <section class="card" id="retention">
+      <h2><span class="num">6</span>How long we keep data</h2>
+      <ul>
+        <li>Account data is kept while your account is active.</li>
+        <li>Support chats are kept so we can help you with follow-up questions and resolve disputes.</li>
+        <li>Order and payment records may be kept for up to 5 years for tax, accounting and legal reasons, even after account deletion.</li>
+        <li>Crash and analytics data is kept according to Firebase's standard retention periods.</li>
+      </ul>
     </section>
 
     <section class="card" id="deletion">
-      <h2><span class="num">5</span>Account and data deletion</h2>
-      <p>In line with Google Play policy, you can request deletion of your account and associated personal data at any time.</p>
+      <h2><span class="num">7</span>Account and data deletion</h2>
+      <p>You can delete your account and personal data at any time.</p>
       <div class="note">
-        <h3>How to request deletion</h3>
+        <h3>How to delete your account</h3>
         <ol>
-          <li><strong>In the app:</strong> go to Profile Settings, then tap <em>Delete Account</em>.</li>
+          <li><strong>In the app:</strong> open <em>Profile</em>, tap <em>Edit profile</em>, then tap <em>Delete account</em>.</li>
           <li><strong>By email:</strong> write from your registered email address to <strong>khaojiofficial@gmail.com</strong> with the subject <code>ACCOUNT DELETION REQUEST</code>.</li>
         </ol>
-        <p style="margin:12px 0 0">After we receive your request, your personal data (name, phone, email, saved addresses) is permanently deleted from our active databases within 7 business days. Transaction and audit records required for tax and legal compliance may be retained.</p>
+        <p style="margin:12px 0 0">Your name, phone number, email, profile photo and saved addresses are permanently deleted within 7 business days. Order records required for tax and legal compliance may be kept as described in section 6, without your contact details.</p>
       </div>
     </section>
 
+    <section class="card" id="children">
+      <h2><span class="num">8</span>Children</h2>
+      <p style="margin:0">KhaoJi is meant for people aged 18 and above. We do not knowingly collect data from children. If you believe a child has created an account, contact us and we will delete it.</p>
+    </section>
+
     <section class="card" id="terms">
-      <h2><span class="num">6</span>Terms and conditions</h2>
+      <h2><span class="num">9</span>Terms and conditions</h2>
       <ul>
-        <li>Orders have a 30-second grace window in which they can be cancelled after placing.</li>
+        <li>After placing an order you have a 30-second window to cancel it. After that the order is sent to the restaurant and cannot be cancelled from the app.</li>
         <li>Cash on Delivery (COD) orders must be paid to the rider on arrival.</li>
-        <li>Abuse of order cancellations or fake OTP requests will result in account suspension.</li>
+        <li>Prices are set by the restaurant. The final total is confirmed at checkout.</li>
+        <li>Fake orders, abuse of cancellations, misuse of promotions or abusive behaviour toward riders, restaurants or support may lead to account suspension.</li>
+        <li>We may update this policy. Changes take effect when posted on this page, and the "Last updated" date will change.</li>
       </ul>
     </section>
 
     <section class="card contact" id="contact">
       <h2 style="justify-content:center">Contact us</h2>
-      <p>Questions about this policy or about data deletion? Write to us at</p>
+      <p>Questions about this policy, your data or account deletion? Write to us at</p>
       <div class="mail">khaojiofficial@gmail.com</div>
     </section>
   </main>
 
-  <footer>&copy; KhaoJi &middot; khaojiofficial@gmail.com</footer>
+  <footer>&copy; 2026 KhaoJi &middot; khaojiofficial@gmail.com</footer>
 </body>
 </html>
